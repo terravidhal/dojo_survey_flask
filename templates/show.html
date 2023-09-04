@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking a css Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>show page</title>
+</head>
+
+<body>
+    <div id="container" class="infos">
+        <h2>Submitted Info</h2>
+        <div class="first_name">First Name : {{session["user_infos"]['inputName4']}}</div>
+        <div class="last_name">Last Name : {{session["user_infos"]['inputlast_name4']}}</div>
+        <div class="genre">Genre : {{session["user_infos"]['gridRadios']}}</div>
+        <div class="dojo_location">Dojo Location : {{session["user_infos"]['inputAddress']}}</div>
+        <div class="favorite_language">Favorite Language : {{session["user_infos"]['inputLanguage']}}</div>
+        <div class="comment">Comment : {{session["user_infos"]['Textarea']}}</div>
+        <form action="/destroy_session" method="POST">
+            <input type="submit" value="Go Back">
+        </form>
+    </div>
+</body>
+
+</html>
